@@ -8,6 +8,7 @@ import java.util.List;
 import simple.example.hewanpedia.model.Anjing;
 import simple.example.hewanpedia.model.Hewan;
 import simple.example.hewanpedia.model.Kucing;
+import simple.example.hewanpedia.model.Semut;
 
 public class DataProvider {
     private static List<Hewan> hewans = new ArrayList<>();
@@ -45,10 +46,23 @@ public class DataProvider {
                 "Anjing dari daerah Shiba ini gesit dan lincah sehingga awalnya banyak digunakan untuk berburu ", R.drawable.dog_shiba));
         return anjings;
     }
+    private static List<Semut> initDataSemut(Context ctx) {
+        List<Semut> semuts = new ArrayList<>();
+        semuts.add(new Semut("Semut Hitam", "Afrika",
+                "Berasal dari Afrika , Semut Hitam memiliki siklus hidup yang sama seperti semut pada umumnya. awalnya larva menetas keluar dari telur  sebagai serangga lembek berwarna putih yang memiliki ukuran kepala cukup besar atau biasa disebut lundi", R.drawable.semut_hitam));
+        semuts.add(new Semut("Semut Hantu", "Amazon",
+                "Semut Hantu biasanya bersarang didalam ruang kecil atau celah dinding. kalau diluar ruangan, mereka biasanya bersarang di pot bunga, dibawah benda-benda di tanah, dan di bawah kulit kayu", R.drawable.semut_hantu));
+        semuts.add(new Semut("Semut Api", "Kalimantan",
+                "Semut Api hidup dengan siklus yang cukup unik. Contohnya, setalah mengerumuni sarang dan kawin, sang ratu semut mencari tempat yang cocok untuk bertelur. Sesudah ditemukan, seekor ratu semut dapat bertelur hingga 125 telur jika memungkinkan", R.drawable.semut_api));
+        semuts.add(new Semut("Semut Odorous", "Amerika",
+                "Semut api hidup dengan siklus yang cukup unik. Contohnya, setelah mengerumuni sarang dan kawin, sang ratu semut mencari tempat yang cocok untuk bertelur. Sesudah ditemukan, seekor ratu semut dapat bertelur hingga 125 telur jika memungkinkan", R.drawable.semut_odorous));
+        return semuts;
+    }
 
     private static void initAllHewans(Context ctx) {
         hewans.addAll(initDataKucing(ctx));
         hewans.addAll(initDataAnjing(ctx));
+        hewans.addAll(initDataSemut(ctx));
     }
 
     public static List<Hewan> getAllHewan(Context ctx) {
